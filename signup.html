@@ -10,7 +10,7 @@
     <p><a href="index.html">&larr; BACK</a></p>
     <div class="main">
         <div class="container">
-            <form action="">
+            <form action="javascript:void(0);">
                 <label for="fname">Enter your full name</label><br>
                 <input type="text" name="" id="fname" placeholder="Full Name" required><br>
                 <label for="username">Enter your username</label><br>
@@ -24,9 +24,38 @@
                 <label for="cpassword">confirm your password</label><br>
                 <input type="password" name="" id="cpassword" placeholder="confirm password" required>
                 <img class="password-icon" src="password.png" alt="">
-                <button><a href="product.html">submit</a></button>
+                <button id="submitBtn">submit</button>
             </form>
         </div>
     </div>
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function(){
+            let fname = document.getElementById('fname').value;
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let cpassword = document.getElementById('cpassword').value;
+
+            if(fname == null || fname ==""){
+                alert('please input your full name');
+            }
+            else if(username == null || username ==""){
+                alert('please input a valid username');
+            }
+            else if(password == null || password ==""){
+                alert('please input a strong password');
+            }
+            else if(cpassword == null || cpassword ==""){
+                alert('please confirm your password');
+            }
+            else if(password != cpassword){
+                alert('please confirm your password');
+            }
+            else{
+                window.location.href = 'product.html';
+            }
+        })
+    </script>
 </body>
 </html>

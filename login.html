@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            text-align: center;
+            justify-content: center;
+        }
+        div.container{
+            width: 100%;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            width: 80px;
+            height: auto;
+            border-radius: 0 15px;
+            filter: drop-shadow(0 0 8px black);
+
+        }
+        h2{
+            margin-bottom: -1em;
+            font-family: 'Roboto', sans-serif;
+            color: #141313;
+        }
+        p{
+            font-size: 20px;
+            line-height: 1.7em;
+        }
+        #Email{
+            width: 95%;
+            border-color: red;
+            padding: .6em;
+            margin-bottom: 1.7em;
+        }
+        input#button, #button1{
+            width: 100%;
+            margin-bottom: 1.5em;
+            font-size: 20px;
+            padding: 10px;
+            background-color: red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="C:\Users\user\AY CODE\my project\logo.jpg" alt="">
+        <h2>Welcome to Aybello Boutique</h2><br>
+        <p>Type your e-mail or phone number to<br> log in or create an account.</p><br>
+        <input type="text" name="" id="Email" placeholder="Email or Mobile Number*"><br>
+        <input type="button" name="" id="button" value="Continue"><br>
+        <input type="button" name="" id="button1" value="Log in with Facebook"><br>
+        <p>
+            For further support, you may visit the Help Center or contact<br> our customer service team.
+        </p>
+        <h2>AYBELLO BOUTIQUE</h2>
+
+
+    </div>
+
+    <script>
+        const continueBtn = document.getElementById('button');
+
+        continueBtn.addEventListener('click', function() {
+            let x = document.getElementById('Email').value;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            const phoneRegex = /^\d{11}$/;
+
+            if (emailRegex.test(x)) {
+                window.location.href = 'product.html';
+            } else if (phoneRegex.test(x)) {
+                window.location.href = 'product.html';
+            } else {
+                alert('Please enter a valid phone number or email address');
+            }
+        });
+
+    </script>
+</body>
+</html>
